@@ -16,7 +16,7 @@ class _MapsScreenState extends State<MapsScreen> {
   Completer<GoogleMapController> _controller = Completer();
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  static const APIKEY = 'AIzaSyBLIex5zIIY0DWZSZHvsAPPQRtZ6WqTZxo';
+  static const APIKEY = 'AIzaSyDfyn3iLx9M05EvE4eE4R9xRE78q_pR2Kw';
   Map<MarkerId, Marker> markers = {};
   Map<PolylineId, Polyline> polylines = {};
   List<LatLng> polylineCoordinates = [];
@@ -40,16 +40,21 @@ class _MapsScreenState extends State<MapsScreen> {
             )
           ],
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        body: Stack(
           children: [
             Container(
-                height: MediaQuery.of(context).size.height - 120,
+                height: MediaQuery.of(context).size.height,
                 child: _mapView(bloc)),
-            Text(
-              'Tap on the Map to get a route..',
-              style: TextStyle(fontSize: 18, color: Colors.black),
-            )
+            Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                    color: Colors.white,
+                    height: 50,
+                    width: 300,
+                    child: Text(
+                      'Tap on the Map to get a route..',
+                      style: TextStyle(fontSize: 18, color: Colors.black),
+                    )))
           ],
         ));
   }
