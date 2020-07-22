@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:postestapp/Screens/MapsScreen/MapsScreenView.dart';
-import 'package:postestapp/blocs/facebooklgoin_provider.dart';
-import 'package:postestapp/blocs/facebooklogin_block.dart';
+
 import 'package:postestapp/blocs/location_provider.dart';
+import 'package:postestapp/blocs/login_bloc.dart';
+import 'package:postestapp/blocs/login_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatelessWidget {

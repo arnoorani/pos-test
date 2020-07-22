@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:postestapp/blocs/facebooklgoin_provider.dart';
 import 'package:postestapp/blocs/location_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Screens/LoginScreen/LoginFrontScreen.dart';
 import 'Screens/MapsScreen/MapsScreenView.dart';
+import 'blocs/login_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
     );
   }
 
-//Checking if User is Logged-In.
   Widget _handleCurrentScreen() {
     bool seen = (prefs.getBool('isLoggedin') ?? false);
     if (seen) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:postestapp/blocs/facebooklogin_block.dart';
-import 'package:postestapp/blocs/locallogin_bloc.dart';
+
+import 'login_bloc.dart';
 
 class LoginProvider extends InheritedWidget {
   final LoginBloc bloc;
