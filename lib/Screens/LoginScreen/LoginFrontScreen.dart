@@ -72,15 +72,15 @@ class LoginPage extends StatelessWidget {
     return StreamBuilder(
       stream: bloc.authResult,
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
-        if (!snapshot.hasData) {
-          return getFlatbutton(snapshot, bloc, 'Login Using Touch-ID');
-        } else {
-          if (snapshot.data) {
-            return LocationProvider(child: MapsScreen());
-          } else {
-            return getFlatbutton(snapshot, bloc, 'OOPS..Try Agin');
-          }
-        }
+        return RaisedButton(
+            child: Text('Log-in using touch-id'),
+            color: Colors.black,
+            textColor: Colors.white,
+            onPressed: !snapshot.hasData
+                ? () async {
+                    bloc.authenticateUser();
+                  }
+                : null);
       },
     );
   }
